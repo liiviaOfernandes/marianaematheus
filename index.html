@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariana & Matheus</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#F4F0E8;
+    --verde:#8A8D78;
+    --verde-escuro:#6F7460;
+    --texto:#4B463E;
+    --branco:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--texto);
+    font-family:'Poppins', sans-serif;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    padding:80px 0;
+}
+
+h1,h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+}
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+    url('IMG_5733.JPG');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    backdrop-filter:blur(4px);
+    padding:40px;
+}
+
+.hero h1{
+    font-size:6rem;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin:20px 0;
+}
+
+.btn{
+    background:var(--verde);
+    color:white;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:40px;
+    display:inline-block;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:var(--verde-escuro);
+}
+
+.contador{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:30px;
+}
+
+.contador div{
+    background:rgba(255,255,255,.15);
+    padding:15px;
+    border-radius:15px;
+    min-width:90px;
+}
+
+.contador span{
+    display:block;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.titulo h2{
+    font-size:3rem;
+}
+
+.historia{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.historia img{
+    width:100%;
+    border-radius:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.presente-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.presente{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.presente img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.presente-content{
+    padding:20px;
+}
+
+.presente h3{
+    margin-bottom:10px;
+}
+
+.valor{
+    color:var(--verde);
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.presente a{
+    display:block;
+    text-align:center;
+    background:var(--verde);
+    color:white;
+    padding:12px;
+    border-radius:12px;
+    text-decoration:none;
+}
+
+.formulario{
+    max-width:700px;
+    margin:auto;
+}
+
+input, textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:15px;
+    background:white;
+}
+
+button{
+    width:100%;
+    border:none;
+    padding:15px;
+    background:var(--verde);
+    color:white;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+.pix{
+    text-align:center;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+}
+
+.pix h3{
+    margin-bottom:15px;
+}
+
+.pix-code{
+    background:#f0f0f0;
+    padding:15px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+footer{
+    background:var(--verde);
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.historia{
+    grid-template-columns:1fr;
+}
+
+.contador{
+    flex-wrap:wrap;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+    <!--HERO-->
+<section class="hero">
+
+<div class="hero-content">
+<h1>Mariana & Matheus</h1>
+<p>08 de Maio de 2027</p>
+
+<a href="#rsvp" class="btn">Confirmar Presença</a>
+
+<div class="contador">
+<div>
+<span id="dias">0</span>
+Dias
+</div>
+
+<div>
+<span id="horas">0</span>
+Horas
+</div>
+
+<div>
+<span id="minutos">0</span>
+Min
+</div>
+
+<div>
+<span id="segundos">0</span>
+Seg
+</div>
+</div>
+
+</div>
+</section>
+
+
+ <!--HISTORIA-->
+<section>
+<div class="container">
+<div class="titulo">
+<h2>Nossa História</h2>
+</div>
+<div class="historia">
+<img src="IMG_0531.PNG" alt="Mariana e Matheus">
+<div class="card">
+<h3>Como nos conhecemos</h3>
+<br>
+<p>
+Nossa história começou de uma forma muito especial: servindo a Deus.
+<br>
+Entre celebrações, encontros e momentos de dedicação à Igreja, nossos 
+caminhos se cruzaram no serviço ao altar. Como acólitos, aprendemos juntos 
+o verdadeiro significado da entrega, da amizade e do amor ao próximo. 
+Sem perceber, aquilo que começou como uma convivência no serviço da 
+comunidade foi se transformando em uma linda história de amor.
+Compartilhamos a mesma fé, os mesmos valores e o desejo de construir 
+uma vida fundamentada em Cristo. Em cada missa, evento paroquial e 
+momento de oração, fortalecíamos não apenas nossa amizade, mas também 
+a certeza de que Deus estava conduzindo nossos passos.
+
+Ao longo dessa caminhada, descobrimos que fomos chamados não apenas para 
+servir juntos à Igreja, mas também para construir uma família. Com a 
+intercessão da Virgem Maria e a bênção de Deus, seguimos escrevendo nossa 
+história, agora rumo ao sacramento do matrimônio.
+Hoje, com o coração cheio de gratidão, convidamos você para celebrar conosco 
+este momento tão especial. Que nossa união seja um testemunho do amor de Deus 
+e que esta nova etapa seja repleta de fé, alegria e bênçãos.
+<br> <br>
+"Assim, eles já não são dois, mas uma só carne. Portanto, o que Deus uniu, ninguém separe." (Mt 19,6)
+</p>
+
+<br>
+
+<p>
+Depois de muitos momentos especiais,
+decidimos dar o próximo passo e celebrar
+nosso amor ao lado de quem faz parte da nossa história.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--INFORMAÇÕES DA CERIMÔNIA-->
+<section>
+<div class="container">
+
+<div class="titulo">
+<h2>Informações da Cerimônia</h2>
+</div>
+
+<div class="info-grid">
+
+<div class="card">
+<h3>Data</h3>
+<p>08/05/2027</p>
+</div>
+
+<div class="card">
+<h3>Horário</h3>
+<p>16:30</p>
+</div>
+
+<div class="card">
+<h3>Local</h3>
+<p>Igreja Nossa Senhora do Carmo</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--LISTA DE PRESENTES-->
+<section>
+
+<!--LISTA DE PRESENTES-->
+<div class="container">
+
+<div class="titulo">
+<h2>Lista de Presentes</h2>
+</div>
+
+<div class="presente-grid">
+
+<div class="presente">
+
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=800">
+
+<div class="presente-content">
+
+<h3>Air Fryer</h3>
+
+<p class="valor">R$ 350,00</p>
+
+<a href="#" target="_blank">
+Presentear
+</a>
+
+</div>
+</div>
+
+<div class="presente">
+<img src="https://images.unsplash.com/photo-1582582429416-47d2d4b27d7d?q=80&w=800">
+<div class="presente-content">
+<h3>Jogo de Panelas</h3>
+<p class="valor">R$ 500,00</p>
+<a href="#" target="_blank">
+Presentear
+</a>
+
+</div>
+</div>
+
+<div class="presente">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800">
+
+<div class="presente-content">
+
+<h3>Ajuda na Lua de Mel</h3>
+
+<p class="valor">Valor Livre</p>
+
+<a href="#pix">
+Contribuir
+</a>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--PIX-->
+<section id="pix">
+<div class="container">
+
+<div class="pix">
+
+<h2>Presente via PIX</h2>
+
+<br>
+
+<p>
+Caso prefira, você pode contribuir através do PIX.
+</p>
+
+<div class="pix-code" id="pixCode">
+casamento@email.com
+</div>
+
+<button onclick="copiarPix()">
+Copiar Chave PIX
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--CONFIRMAR PRESENÇA-->
+<section id="rsvp">
+<div class="container">
+
+<div class="titulo">
+<h2>Confirmar Presença</h2>
+</div>
+<form class="formulario">
+<input type="text" placeholder="Nome Completo">
+<input type="tel" placeholder="Telefone">
+<input type="number" placeholder="Quantidade de acompanhantes">
+<textarea rows="5" placeholder="Mensagem para os noivos"></textarea>
+
+<button type="submit">
+Confirmar Presença
+</button>
+</form>
+
+</div>
+
+</section>
+
+<!--FOOTER-->
+<footer>
+<h2>Mariana & Matheus</h2>
+<p>
+Obrigado por fazer parte da nossa história!
+</p>
+</footer>
+
+<script>
+const dataCasamento = new Date("Oct 15, 2027 16:00:00").getTime();
+
+setInterval(() => {
+const agora = new Date().getTime();
+
+const distancia = dataCasamento - agora;
+
+const dias = Math.floor(distancia / (1000*60*60*24));
+const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+const segundos = Math.floor((distancia%(1000*60))/1000);
+
+document.getElementById("dias").innerHTML = dias;
+document.getElementById("horas").innerHTML = horas;
+document.getElementById("minutos").innerHTML = minutos;
+document.getElementById("segundos").innerHTML = segundos;
+
+},1000);
+
+function copiarPix(){
+
+const chave = document.getElementById("pixCode").innerText;
+
+navigator.clipboard.writeText(chave);
+
+alert("Chave PIX copiada!");
+
+}
+
+</script>
+
+</body>
+</html>
