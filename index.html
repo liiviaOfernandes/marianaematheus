@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariana & Matheus</title>
+<title>José e Maria</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-    --bg:#F4F0E8;
-    --verde:#8A8D78;
-    --verde-escuro:#6F7460;
-    --texto:#4B463E;
+    --bg:#d8aa4d;
+    --verde:#6a81a7;
+    --verde-escuro:#6a81a7;
+    --texto:#394b6e;
     --branco:#fff;
 }
 
@@ -23,17 +23,113 @@
     padding:0;
     box-sizing:border-box;
 }
-
 body{
-    background:var(--bg);
-    color:var(--texto);
-    font-family:'Poppins', sans-serif;
+    margin:0;
+    background:#efece5;
+    font-family:Poppins,sans-serif;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+.hero-container{
+    width:95%;
+    max-width:1400px;
+    height:90vh;
+
+    margin:20px auto;
+
+    border-radius:40px;
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.12);
+}
+
+.hero-container::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.20)
+    ),
+    url("IMG_5733.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    filter:blur(4px);
+
+    transform:scale(1.05);
+
+    z-index:1;
+}
+
+.hero-content,
+.navbar{
+    position:relative;
+    z-index:2;
+}
+.menu{
+    position:absolute;
+    top:15px;
+    left:15px;
+    right:15px;
+
+    display:flex;
+    gap:10px;
+
+    z-index:10;
+}
+
+
+.hero-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:9rem;
+    font-weight:300;
+    margin:2rem;
+    line-height:1;
+}
+
+.hero-content p{
+     width:100%;
+    max-width:700px;
+
+    margin:0 auto 30px;
+
+    text-align:center;
+
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+    background:var(--verde);
+    padding:28px 50px;
+    margin-top: 7rem;
+    border-radius:999px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:var(--texto);
+    color: #fff;
 }
 
 section{
@@ -45,68 +141,7 @@ h1,h2{
     font-weight:400;
 }
 
-.hero{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
-    url('IMG_5733.JPG');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-}
-
-.hero-content{
-    backdrop-filter:blur(4px);
-    padding:40px;
-}
-
-.hero h1{
-    font-size:6rem;
-}
-
-.hero p{
-    font-size:1.2rem;
-    margin:20px 0;
-}
-
-.btn{
-    background:var(--verde);
-    color:white;
-    text-decoration:none;
-    padding:15px 35px;
-    border-radius:40px;
-    display:inline-block;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:var(--verde-escuro);
-}
-
-.contador{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-top:30px;
-}
-
-.contador div{
-    background:rgba(255,255,255,.15);
-    padding:15px;
-    border-radius:15px;
-    min-width:90px;
-}
-
-.contador span{
-    display:block;
-    font-size:2rem;
-    font-weight:bold;
-}
-
+/*Historia*/
 .titulo{
     text-align:center;
     margin-bottom:50px;
@@ -118,19 +153,21 @@ h1,h2{
 
 .historia{
     display:grid;
+    padding: 1rem;
     grid-template-columns:1fr 1fr;
     gap:40px;
     align-items:center;
 }
 
 .historia img{
-    width:100%;
+    max-width:185%;
     border-radius:25px;
 }
 
 .card{
     background:white;
     padding:30px;
+    margin: 1rem;
     border-radius:25px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
@@ -141,10 +178,80 @@ h1,h2{
     gap:25px;
 }
 
+/*convite*/
+.convite-section{
+    padding:120px 20px;
+    background:#f4f0e8;
+}
+
+.container-convite{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:450px 1fr;
+    gap:80px;
+
+    align-items:center;
+}
+
+.convite-imagem img{
+    width:100%;
+    display:block;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.08);
+}
+
+.subtitulo{
+    color:var(--verde);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.9rem;
+}
+
+.convite-info h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:4rem;
+    font-weight:300;
+    margin:15px 0 35px;
+}
+
+.card-cerimonia{
+    background:var(--texto);
+    color:white;
+    padding:40px;
+    border-radius:25px;
+}
+
+.info-item{
+    margin-bottom:25px;
+}
+
+.info-item:last-child{
+    margin-bottom:0;
+}
+
+.info-item h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:1.8rem;
+
+    margin-bottom:5px;
+}
+
+.info-item p{
+    opacity:.9;
+    line-height:1.6;
+}
+
+/*presentes*/
 .presente-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
+    padding: 2rem;
 }
 
 .presente{
@@ -156,7 +263,7 @@ h1,h2{
 
 .presente img{
     width:100%;
-    height:220px;
+    height:480px;
     object-fit:cover;
 }
 
@@ -184,6 +291,7 @@ h1,h2{
     text-decoration:none;
 }
 
+/*lista de presença*/
 .formulario{
     max-width:700px;
     margin:auto;
@@ -212,6 +320,7 @@ button{
     text-align:center;
     background:white;
     padding:40px;
+    margin: 1rem;
     border-radius:25px;
 }
 
@@ -225,6 +334,9 @@ button{
     border-radius:10px;
     margin:20px 0;
 }
+.container-presença{
+    margin: 2rem;
+}
 
 footer{
     background:var(--verde);
@@ -233,6 +345,114 @@ footer{
     padding:30px;
 }
 
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px){
+
+    .hero-container{
+        width:95%;
+        height:85vh;
+        border-radius:25px;
+        margin:10px auto;
+    }
+
+    .menu{
+        top:15px;
+        left:15px;
+        right:15px;
+
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+
+        gap:8px;
+    }
+
+    .menu a{
+        padding:8px 14px;
+        font-size:0.85rem;
+    }
+
+    .hero-content{
+        padding:20px;
+    }
+
+    .hero-content h1{
+        font-size:clamp(3rem, 14vw, 5rem);
+        line-height:.9;
+        margin-bottom:15px;
+    }
+
+    .hero-content p{
+        max-width:100%;
+        font-size:1rem;
+        line-height:1.5;
+        margin:15px 0 25px;
+    }
+
+    .btn{
+        padding:15px 30px;
+        font-size:1rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .container-convite{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .convite-info{
+        text-align:center;
+    }
+
+    .convite-info h2{
+        font-size:3rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .menu{
+
+        position:absolute;
+
+        top:70px;
+        right:0;
+
+        width:220px;
+
+        background:rgba(0,0,0,.6);
+
+        backdrop-filter:blur(15px);
+
+        border-radius:20px;
+
+        display:none;
+        flex-direction:column;
+
+        padding:15px;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu a{
+        text-align:center;
+        width:100%;
+    }
+
+}
 @media(max-width:768px){
 
 .hero h1{
@@ -250,43 +470,27 @@ footer{
 }
 
 </style>
+
 </head>
 <body>
 
     <!--HERO-->
-<section class="hero">
+<section class="hero-container">
+    <div class="hero-content">
 
-<div class="hero-content">
-<h1>Mariana & Matheus</h1>
-<p>08 de Maio de 2027</p>
+        <h1>José e Maria</h1>
 
-<a href="#rsvp" class="btn">Confirmar Presença</a>
+        <p>
+            Celebraremos nossa união cercados de amor,
+            pessoas especiais e memórias inesquecíveis.
+        </p>
+        <a href="#presenca" class="btn">
+            Confirmar Presença
+        </a>
 
-<div class="contador">
-<div>
-<span id="dias">0</span>
-Dias
-</div>
+    </div>
 
-<div>
-<span id="horas">0</span>
-Horas
-</div>
-
-<div>
-<span id="minutos">0</span>
-Min
-</div>
-
-<div>
-<span id="segundos">0</span>
-Seg
-</div>
-</div>
-
-</div>
 </section>
-
 
  <!--HISTORIA-->
 <section>
@@ -295,30 +499,12 @@ Seg
 <h2>Nossa História</h2>
 </div>
 <div class="historia">
-<img src="IMG_0531.PNG" alt="Mariana e Matheus">
+<img src="baixados.jpg" alt="José e Maria">
 <div class="card">
 <h3>Como nos conhecemos</h3>
 <br>
 <p>
-Nossa história começou de uma forma muito especial: servindo a Deus.
-<br>
-Entre celebrações, encontros e momentos de dedicação à Igreja, nossos 
-caminhos se cruzaram no serviço ao altar. Como acólitos, aprendemos juntos 
-o verdadeiro significado da entrega, da amizade e do amor ao próximo. 
-Sem perceber, aquilo que começou como uma convivência no serviço da 
-comunidade foi se transformando em uma linda história de amor.
-Compartilhamos a mesma fé, os mesmos valores e o desejo de construir 
-uma vida fundamentada em Cristo. Em cada missa, evento paroquial e 
-momento de oração, fortalecíamos não apenas nossa amizade, mas também 
-a certeza de que Deus estava conduzindo nossos passos.
-
-Ao longo dessa caminhada, descobrimos que fomos chamados não apenas para 
-servir juntos à Igreja, mas também para construir uma família. Com a 
-intercessão da Virgem Maria e a bênção de Deus, seguimos escrevendo nossa 
-história, agora rumo ao sacramento do matrimônio.
-Hoje, com o coração cheio de gratidão, convidamos você para celebrar conosco 
-este momento tão especial. Que nossa união seja um testemunho do amor de Deus 
-e que esta nova etapa seja repleta de fé, alegria e bênçãos.
+Nossa história começou de uma forma muito especial: ...
 <br> <br>
 "Assim, eles já não são dois, mas uma só carne. Portanto, o que Deus uniu, ninguém separe." (Mt 19,6)
 </p>
@@ -340,33 +526,51 @@ nosso amor ao lado de quem faz parte da nossa história.
 </section>
 
 <!--INFORMAÇÕES DA CERIMÔNIA-->
-<section>
-<div class="container">
+<section class="convite-section">
 
-<div class="titulo">
-<h2>Informações da Cerimônia</h2>
-</div>
+    <div class="container-convite">
 
-<div class="info-grid">
+        <div class="convite-imagem">
+            <img src="convite2.jpg" alt="Convite José e Maria">
+        </div>
 
-<div class="card">
-<h3>Data</h3>
-<p>08/05/2027</p>
-</div>
+        <div class="convite-info">
 
-<div class="card">
-<h3>Horário</h3>
-<p>16:30</p>
-</div>
+            <span class="subtitulo">
+                Nosso Grande Dia
+            </span>
 
-<div class="card">
-<h3>Local</h3>
-<p>Igreja Nossa Senhora do Carmo</p>
-</div>
+            <h2>
+                Informações da Cerimônia
+            </h2>
 
-</div>
+            <div class="card-cerimonia">
 
-</div>
+                <div class="info-item">
+                    <h3>Data</h3>
+                    <p>28 de Maio de 2027</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Horário</h3>
+                    <p>16h30</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Local</h3>
+                    <p>Igreja Nossa Senhora do Carmo</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Recepção</h3>
+                    <p>xxxxxx</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -384,46 +588,49 @@ nosso amor ao lado de quem faz parte da nossa história.
 
 <div class="presente">
 
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=800">
-
+<img src="presente1.jpg">
 <div class="presente-content">
-
 <h3>Air Fryer</h3>
-
-<p class="valor">R$ 350,00</p>
-
-<a href="#" target="_blank">
+<p class="valor">R$ 456,90</p>
+<a href="https://www.magazineluiza.com.br/air-fryer-mondial-forno-oven-afon-12l-bi-preto-e-inox-12l/p/237219400/ep/efso/?&seller_id=magazineluiza&utm_source=google&utm_medium=cpc&utm_term=84363&utm_campaign=google_eco_per_ven_pla_ele_apo_1p_cp-ep-csp-0326&utm_content=&partner_id=84363&gclsrc=aw.ds&gad_source=1&gad_campaignid=23609503630&gbraid=0AAAAAD4zZmQl5XP5YxOH8BkawuCZOvmMe&gclid=CjwKCAjwpK3SBhASEiwAtV1SPF48GY37hvQ8IjIqF9cN0VayCKaQEf26S6wlRhxv2ughB0T7mzvOhhoCem0QAvD_BwE" target="_blank">
 Presentear
 </a>
+<BR>
+<button onclick="copiarPix()">
+Doar via PIX
+</button>
 
 </div>
 </div>
 
 <div class="presente">
-<img src="https://images.unsplash.com/photo-1582582429416-47d2d4b27d7d?q=80&w=800">
+<img src="panelas.png">
 <div class="presente-content">
 <h3>Jogo de Panelas</h3>
-<p class="valor">R$ 500,00</p>
-<a href="#" target="_blank">
+<p class="valor">R$ 455,00</p>
+<a href="https://www.mercadolivre.com.br/jogo-com-8-panelas-antiaderentes-de-ceramica-terrara-bege-oikos/p/MLB44332013?pdp_filters=item_id%3AMLB6425811922&from=gshop&matt_tool=86217123&matt_word=&matt_source=google&matt_campaign_id=23351282321&matt_ad_group_id=191545524922&matt_match_type=&matt_network=g&matt_device=c&matt_creative=787871604137&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=735128188&matt_product_id=MLB44332013-product&matt_product_partition_id=2388009209946&matt_target_id=aud-2486398078456:pla-2388009209946&cq_src=google_ads&cq_cmp=23351282321&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gad_campaignid=23351282321&gbraid=0AAAAAD93qcB1MAhGPyg9zD41ui3ZJpN33&gclid=CjwKCAjwpK3SBhASEiwAtV1SPGJwb0tcOJ5BrMQ1O_g5xqf8jBtWBNofFYlLdwiUTc8nHyvlJRUL0BoCx5UQAvD_BwE" target="_blank">
 Presentear
 </a>
+<BR>
+<button onclick="copiarPix()">
+Doar via PIX
+</button>
 
 </div>
 </div>
 
 <div class="presente">
 
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800">
+<img src="Luademel.jpg">
 
 <div class="presente-content">
 
 <h3>Ajuda na Lua de Mel</h3>
 
 <p class="valor">Valor Livre</p>
-
-<a href="#pix">
-Contribuir
-</a>
+<button onclick="copiarPix()">
+Contribuir via PIX
+</button>
 
 </div>
 </div>
@@ -464,7 +671,7 @@ Copiar Chave PIX
 
 <!--CONFIRMAR PRESENÇA-->
 <section id="rsvp">
-<div class="container">
+<div class="container-presença">
 
 <div class="titulo">
 <h2>Confirmar Presença</h2>
@@ -486,7 +693,7 @@ Confirmar Presença
 
 <!--FOOTER-->
 <footer>
-<h2>Mariana & Matheus</h2>
+<h2>José & Maria</h2>
 <p>
 Obrigado por fazer parte da nossa história!
 </p>
@@ -521,6 +728,14 @@ navigator.clipboard.writeText(chave);
 alert("Chave PIX copiada!");
 
 }
+
+const menuToggle = document.getElementById('menuToggle');
+const menu = document.getElementById('menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
 
 </script>
 
