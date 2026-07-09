@@ -2198,6 +2198,45 @@ footer h2{
     transform:translateY(0);
 }
 
+@media(max-width:600px){
+
+.navbar{
+    height:75px;
+}
+
+.logo{
+    font-size:1.55rem;
+}
+
+.hero{
+    padding-top:110px;
+}
+
+.subtitle{
+    font-size:.75rem;
+    letter-spacing:3px;
+}
+
+.hero h1{
+    font-size:3.3rem;
+}
+
+.hero-date{
+    margin:20px 0;
+    font-size:1rem;
+}
+
+.hero-text{
+    font-size:.9rem;
+    line-height:1.8;
+}
+
+.scroll-indicator{
+    display:none;
+}
+
+}
+
 /*======================================
 POPUP
 ======================================*/
@@ -4608,6 +4647,26 @@ imagemLightbox.style.transform =
 lightbox.addEventListener("click",()=>{
 zoom=1;
 imagemLightbox.style.transform="scale(1)";
+});
+
+const menu = document.querySelector(".menu");
+const botao = document.querySelector(".menu-mobile");
+
+botao.addEventListener("click", () => {
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        botao.innerHTML = "✕";
+    }else{
+        botao.innerHTML = "☰";
+    }
+});
+
+document.querySelectorAll(".menu a").forEach(link=>{
+    link.addEventListener("click",()=>{
+        menu.classList.remove("active");
+        botao.innerHTML="☰";
+    });
 });
 
 </script>
